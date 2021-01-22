@@ -47,7 +47,7 @@ class write{
 
 
         try{
-            $informationjson = json_encode($informationarray, JSON_THROW_ON_ERROR || JSON_UNESCAPED_UNICODE || JSON_PRETTY_PRINT);
+            $informationjson = json_encode($informationarray, JSON_THROW_ON_ERROR | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
         }catch(\JsonException $e){
             $informationjson = "{}";
         }
@@ -80,7 +80,7 @@ class write{
         ksort($informationarray);
 
         try{
-            $informationjson = json_encode($informationarray, JSON_THROW_ON_ERROR || JSON_UNESCAPED_UNICODE || JSON_PRETTY_PRINT);
+            $informationjson = json_encode($informationarray, JSON_THROW_ON_ERROR | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
         }catch(\JsonException $e){
             $informationjson = "{}";
         }

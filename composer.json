@@ -9,7 +9,8 @@
         }
     ],
     "require": {
-        "php": ">8"
+        "php": ">8",
+        "ext-json": "*"
     },
     "autoload": {
         "classmap": [
