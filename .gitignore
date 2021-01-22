@@ -3,3 +3,4 @@ composer.phar
 vendor
 storage
 composer.lock
+web
