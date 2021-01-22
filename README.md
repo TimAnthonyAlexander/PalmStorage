@@ -13,7 +13,9 @@ Die Methoden haben keine Syntaxüberprüfung.
 ```
 (new palmstorage)->insert(database: "meinedatenbank", statement: "||benutzername°passwort||benutzername_123°benutzerpasswort123");
 ```
+
 Dies trägt die Daten $benutzername und $passwort in die Spalten "benutzername" und "passwort" innerhalb der Datenbank "meinedatenbank".
+
 Die Syntax für das Statement funktioniert so:
 
 ```ID||COL(°COL°COL°COL)||VAL(°VAL°VAL°VAL)```
@@ -33,11 +35,13 @@ $result = (new palmstorage)->readval(database: "meinedatenbank", statement: "ben
 ```
 
 Die Syntax für dieses Statement funktioniert so:
+
 ```COL||ID```
 
 Vergleichbare SQL Syntax:
 
 ```SELECT `COL` FROM `meinedatenbank` WHERE `id`='ID'```
+
 Für normales WHERE `XY`='AB' siehe *search*.
 
 Beide Elemente müssen angegeben werden. Der Returntype ist String.
@@ -48,6 +52,7 @@ $userinfo_array = (new palmstorage)->readvals(database: "meinedatenbank", statem
 ```
 
 Die Syntax für dieses Statement funktioniert folgendermaßen:
+
 ```ID```
 
 Vergleichbare SQL Syntax:
