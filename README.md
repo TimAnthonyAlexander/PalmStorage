@@ -7,6 +7,21 @@ Es kann Daten speichern, Daten auslesen (anhand jedes Wertes) und Daten löschen
 Es gibt *keine* reservierten Spaltennamen.
 Die Methoden haben keine Syntaxüberprüfung.
 
+Um zu überprüfen, ob eine Reihe existiert, kann dies benutzt werden:
+
+```count((new palmstorage)->readvals(database: "meinedatenbank", statement: "ID"));```\
+ID ist die Reihen-ID, kein Wert aus einer der Spalten.
+
+oder mit Search:
+
+```count((new palmstorage)->search(database: "meinedatenbank", statement: "COL|COL|VAL"));```\
+COL ist eine Spalte, die definitiv da ist, VAL ist der reihenidentifizierende Wert.
+
+## Datenbankenliste
+
+Mit dem ersten Schreibprozess wird eine weitere Datenbank angelegt, welche alle Datenbanken auflistet.
+Die Liste ist mit ```(new palmstorage)->listdb()``` als Array ausgegeben. 
+
 ## Funktionen:
 
 ### Insert
@@ -92,7 +107,12 @@ Der Returntype ist vom Typ Array, und sieht so aus:
 ]
 ```
 
-### Ungefährer Vergleich im Code (```(new connection)``` gibt ein PDO-Objekt zurück.)
-#### PalmStorage vs MySSQL(PDO):
+### Vergleiche PalmStorage vs MySSQL(PDO)
+
+#### Im Code
 
 ![vergleich](https://i.ibb.co/126r5qK/taa-screenshot-2021-01-22-at-14-15-12.png)
+
+#### Geschwindigkeit
+
+![vergleich](https://i.ibb.co/TPYmPZS/taa-screenshot-2021-01-22-at-15-25-30.png)
