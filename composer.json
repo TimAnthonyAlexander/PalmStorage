@@ -10,7 +10,8 @@
     ],
     "require": {
         "php": ">8",
-        "ext-json": "*"
+        "ext-json": "*",
+        "ext-pdo": "*"
     },
     "autoload": {
         "classmap": [
