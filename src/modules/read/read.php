@@ -4,7 +4,7 @@ namespace PalmStorage;
 
 class read{
     public function readvals(String $database, String $statement): array{
-        $statement_parts = explode("|", $statement);
+        $statement_parts = explode("°", $statement);
         [$identifier] = $statement_parts;
         try{
             $nowinformation = json_decode(file_get_contents("../storage/db/$database.pst"), true, 512, JSON_THROW_ON_ERROR);
@@ -19,7 +19,7 @@ class read{
         return [];
     }
     public function readval(String $database, String $statement){
-        $statement_parts = explode("|", $statement);
+        $statement_parts = explode("°", $statement);
         [$col, $identifier] = $statement_parts;
         try{
             $nowinformation = json_decode(file_get_contents("../storage/db/$database.pst"), true, 512, JSON_THROW_ON_ERROR);

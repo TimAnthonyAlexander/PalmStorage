@@ -10,10 +10,10 @@ class write{
             }
             mkdir("../storage/db");
         }
-        $statement_parts = explode("|", $statement);
+        $statement_parts = explode("||", $statement);
         [$identifier, $cols, $vals] = $statement_parts;
-        $cols_parts = explode("-", $cols);
-        $vals_parts = explode("-", $vals);
+        $cols_parts = explode("°", $cols);
+        $vals_parts = explode("°", $vals);
         try{
             if(file_exists("../storage/db/$database.pst")){
                 $nowinformation = json_decode(file_get_contents("../storage/db/$database.pst"), true, 512, JSON_THROW_ON_ERROR);
@@ -47,7 +47,7 @@ class write{
 
 
         try{
-            $informationjson = json_encode($informationarray, JSON_THROW_ON_ERROR | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+            $informationjson = json_encode($informationarray, JSON_THROW_ON_ERROR || JSON_UNESCAPED_UNICODE || JSON_PRETTY_PRINT);
         }catch(\JsonException $e){
             $informationjson = "{}";
         }
@@ -55,7 +55,7 @@ class write{
 
 
         if( $database !== "databases" && !file_exists("../storage/db/$database.pst")){
-            (new self)->insert("databases", "|databasename|$database");
+            (new self)->insert("databases", "||databasename||$database");
         }
 
         $db = fopen("../storage/db/$database.pst", 'wb');
@@ -66,7 +66,7 @@ class write{
         return true;
     }
     public function remove($database, String $statement): bool{
-        $statement_parts = explode("|", $statement);
+        $statement_parts = explode("||", $statement);
         [$identifier] = $statement_parts;
         try{
             $nowinformation = json_decode(file_get_contents("../storage/db/$database.pst"), true, 512, JSON_THROW_ON_ERROR);
@@ -80,14 +80,14 @@ class write{
         ksort($informationarray);
 
         try{
-            $informationjson = json_encode($informationarray, JSON_THROW_ON_ERROR | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+            $informationjson = json_encode($informationarray, JSON_THROW_ON_ERROR || JSON_UNESCAPED_UNICODE || JSON_PRETTY_PRINT);
         }catch(\JsonException $e){
             $informationjson = "{}";
         }
 
 
         if( $database !== "databases" && !file_exists("../storage/db/$database.pst")){
-            (new self)->insert("databases", "|databasename|$database");
+            (new self)->insert("databases", "||databasename||$database");
         }
 
         $db = fopen("../storage/db/$database.pst", 'wb');
