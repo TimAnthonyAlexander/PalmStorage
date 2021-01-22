@@ -107,7 +107,12 @@ Der Returntype ist vom Typ Array, und sieht so aus:
 ]
 ```
 
-### Ungefährer Vergleich im Code (```(new connection)``` gibt ein PDO-Objekt zurück.)
-#### PalmStorage vs MySSQL(PDO):
+### Vergleiche PalmStorage vs MySSQL(PDO)
+
+#### Im Code
 
 ![vergleich](https://i.ibb.co/126r5qK/taa-screenshot-2021-01-22-at-14-15-12.png)
+
+#### Geschwindigkeit
+
+![vergleich](https://i.ibb.co/TPYmPZS/taa-screenshot-2021-01-22-at-15-25-30.png)
