@@ -5,8 +5,9 @@
 PalmStorage ist ein Datenbanken-Paradigma.
 Es kann Daten speichern, Daten auslesen (anhand jedes Wertes) und Daten löschen.
 Es gibt *keine* reservierten Spaltennamen.
+Die Methoden haben keine Syntaxüberprüfung.
 
-## Syntax:
+## Funktionen:
 
 ### Insert
 ```
@@ -16,6 +17,10 @@ Dies trägt die Daten $benutzername und $passwort in die Spalten "benutzername" 
 Die Syntax für das Statement funktioniert so:
 
 ```ID||COL(°COL°COL°COL)||VAL(°VAL°VAL°VAL)```
+
+Vergleichbare SQL Syntax:
+
+```INSERT INTO `meinedatenbank` (COL, COL, COL, COL) VALUES (VAL, VAL, VAL, VAL)```
 
 Die ID kann angegeben werden, und ersetzt vorhandene Werte.
 Wenn nicht angegeben, wird die Datenbank mit automatischem Inkrement erweitert.
@@ -30,6 +35,11 @@ $result = (new palmstorage)->readval(database: "meinedatenbank", statement: "ben
 Die Syntax für dieses Statement funktioniert so:
 ```COL||ID```
 
+Vergleichbare SQL Syntax:
+
+```SELECT `COL` FROM `meinedatenbank` WHERE `id`='ID'```
+Für normales WHERE `XY`='AB' siehe *search*.
+
 Beide Elemente müssen angegeben werden. Der Returntype ist String.
 
 ### Readvals
@@ -40,7 +50,26 @@ $userinfo_array = (new palmstorage)->readvals(database: "meinedatenbank", statem
 Die Syntax für dieses Statement funktioniert folgendermaßen:
 ```ID```
 
+Vergleichbare SQL Syntax:
+
+```SELECT * FROM `meinedatenbank` WHERE `id`='ID'```
+
 Es wird nur die ID angegeben. Ausgegeben wird die gesamte Spalte als Array, oder ein leerer Array, falls die Spalte nicht existiert.
+
+### Search
+```
+$userpassword = (new palmstorage)->search(database: "meinedatenbank", statement: "passwort||benutzername||benutzername_123");
+```
+Dies gäbe das Passwort für den Benutzer "benutzername_123" aus.
+
+Die Syntax für dieses Statement:
+
+```WANTEDCOL||COL||VAL```
+
+Vergleichbare SQL Syntax:
+
+```SELECT `WANTEDCOL` FROM `meinedatenbank` WHERE `COL`='VAL'```
+
 
 ### Readdb
 ```
