@@ -1,0 +1,12 @@
+{
+    "name": "timanthonyalexander/palmstorage",
+    "description": "This is PalmStorage.",
+    "type": "project",
+    "authors": [
+        {
+            "name": "TimAnthonyAlexander",
+            "email": "github@timanthonyalexander.de"
+        }
+    ],
+    "require": {}
+}
