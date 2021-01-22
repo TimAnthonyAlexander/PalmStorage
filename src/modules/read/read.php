@@ -18,6 +18,24 @@ class read{
         }
         return [];
     }
+    public function search($database, $statement): string{
+        $statement_parts = explode("||", $statement);
+        [$col, $identcol, $identifier] = $statement_parts;
+        try{
+            $nowinformation = json_decode(file_get_contents("../storage/db/$database.pst"), true, 512, JSON_THROW_ON_ERROR);
+        }catch(\JsonException $e){
+            $nowinformation = [];
+        }
+
+        foreach($nowinformation as $key => $val){
+            foreach($val as $subkey => $subval){
+                if($subkey == $identcol && $subval == $identifier){
+                    return $val[$col];
+                }
+            }
+        }
+        return "";
+    }
     public function readval(String $database, String $statement){
         $statement_parts = explode("°", $statement);
         [$col, $identifier] = $statement_parts;
