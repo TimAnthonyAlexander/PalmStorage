@@ -17,6 +17,15 @@ oder mit Search:
 ```count((new palmstorage)->search(database: "meinedatenbank", statement: "COL|COL|VAL"));```\
 COL ist eine Spalte, die definitiv da ist, VAL ist der reihenidentifizierende Wert.
 
+
+## Verschlüsselung
+
+Standardmäßig werden Daten verschlüsselt in die Datenbank geschrieben.
+Dazu erstellt PalmStorage einen einmaligen Serverschlüssel.
+Dieser kann in anderen Anwendungen importiert werden und somit können Datenbanken zwischen Anwendungen transportiert werden.
+Ohne Serverschlüssel sind Datenbankeninhalte unlesbar und geheim.
+
+
 ## Datenbankenliste
 
 Mit dem ersten Schreibprozess wird eine weitere Datenbank angelegt, welche alle Datenbanken auflistet.
