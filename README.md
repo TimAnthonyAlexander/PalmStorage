@@ -116,7 +116,7 @@ Der Returntype ist vom Typ Array, und sieht so aus:
 ]
 ```
 
-### Vergleiche PalmStorage vs MySSQL(PDO)
+### Vergleiche PalmStorage vs MySQL(PDO)
 
 #### Im Code
 
