@@ -35,14 +35,14 @@ Die Liste ist mit ```(new palmstorage)->listdb()``` als Array ausgegeben.
 
 ### Insert
 ```
-(new palmstorage)->insert(database: "meinedatenbank", statement: "||benutzername°passwort||benutzername_123°benutzerpasswort123");
+(new palmstorage)->insert(database: "meinedatenbank", statement: "||benutzername|passwort||benutzername_123|benutzerpasswort123");
 ```
 
 Dies trägt die Daten $benutzername und $passwort in die Spalten "benutzername" und "passwort" innerhalb der Datenbank "meinedatenbank".
 
 Die Syntax für das Statement funktioniert so:
 
-```ID||COL(°COL°COL°COL)||VAL(°VAL°VAL°VAL)```
+```ID||COL(|COL|COL|COL)||VAL(|VAL|VAL|VAL)```
 
 Vergleichbare SQL Syntax:
 
